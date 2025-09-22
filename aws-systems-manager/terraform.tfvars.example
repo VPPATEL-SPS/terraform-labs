@@ -1,0 +1,39 @@
+# Example terraform.tfvars file
+# Copy this file to terraform.tfvars and customize the values for your environment
+
+# AWS Region
+aws_region = "us-east-1"
+
+# Environment name
+app_environment = "dev"
+
+# Database password (store in a secure manner in production)
+database_password = "MySecurePassword123!"
+
+# Allowed IP addresses for security configuration
+allowed_ip_addresses = [
+  "10.0.0.0/8",
+  "172.16.0.0/12",
+  "192.168.0.0/16"
+]
+
+# Common tags to apply to all resources
+common_tags = {
+  Project     = "terraform-labs"
+  Environment = "dev"
+  ManagedBy   = "terraform"
+  Owner       = "DevOps Team"
+  CostCenter  = "Engineering"
+}
+
+# Maintenance window schedule (every Tuesday at 4 PM UTC)
+maintenance_window_schedule = "cron(0 16 ? * TUE *)"
+
+# Patch schedule (every Sunday at 2 AM UTC)
+patch_schedule = "cron(0 02 ? * SUN *)"
+
+# Maximum concurrency for maintenance tasks
+max_concurrency = "2"
+
+# Maximum errors allowed
+max_errors = "1"
